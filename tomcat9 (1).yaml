@@ -1,0 +1,41 @@
+---
+- hosts: appservers
+  become: yes
+  vars:
+    xmx_size: 512
+    perm_size: 256
+    tomcat_user: devops
+    tomcat_password: devops
+    tomcat_packages:
+      - tomcat9-docs
+      - tomcat9-admin
+      - tomcat9-examples
+  tasks:
+    - name: Update ubuntu packages and install tomcat8
+      apt:
+        name: tomcat9
+        update_cache: yes
+        state: present
+    - name: copy tomcat9
+      template:
+        src: tomcat8.j2
+        dest: /etc/default/tomcat9
+      notify:
+        - restart and enable tomcat
+    - name: install tomcat packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ tomcat_packages }}"
+    - name: copy tomcat users
+      template:
+        src: tomcat-users.xml.j2
+        dest: /etc/tomcat9/tomcat-users.xml
+      notify:
+        - restart and enable tomcat
+  handlers:
+    - name: restart and enable tomcat
+      service:
+        name: tomcat9
+        enabled: yes
+        state: restarted

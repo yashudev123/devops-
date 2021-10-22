@@ -1,0 +1,2 @@
+kubeadm join 10.128.0.2:6443 --token tc6bji.qafe607g42afzakd \
+--discovery-token-ca-cert-hash sha256:66cd64eea2e2aaa7d23b0f30e68620414b51057641d0c7ec16a0d32e84dccf14 

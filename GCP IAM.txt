@@ -1,0 +1,27 @@
+
+--->> admin - console the org.with a proper ways
+
+--->> dev-ops engineer need to devloper need to support and 
+
+IAM ---> with roll allocation and all permission with the role and granted.
+
+
+
+JAVA routing ------------------>>>
+
+C:\Program Files\Java\jdk-11.0.11
+
+
+  265  gsutil ls
+  266  gsutil ls gs://flipkart-login/
+  267  ls
+  268  clear
+  269  gsutil ls
+  270  gsutil gs://flipkart-login/ ls
+  271  gsutil ls gs://flipkart-login/
+  272  ls
+  273  gsutil cp kiran.txt gs://flipkart-login/
+  274  gsutil rm gs://flipkart-login/kiran.txt
+  275  gsutil mb gs://flipkart-qa-login
+  276  ls
+  277  gsutil mv Test/ gs://flipkart-qa-login

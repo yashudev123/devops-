@@ -1,0 +1,25 @@
+
+
+
+
+kirankumarrv0990@cloudshell:~/test-coderepo (devops-test-316311)$ git show 9d68976
+commit 9d68976e0f0ffccedc359eb044824c8b079a3e36 (HEAD -> master, origin/master, origin/HEAD)
+Author: kirankumar <kirankumarrv0990@gmail.com>
+Date:   Thu Jul 22 03:04:54 2021 +0000    this is for cloud shell
+diff --git a/app.java b/app.java
+new file mode 100644
+index 0000000..316f65c
+--- /dev/null
++++ b/app.java
+@@ -0,0 +1 @@
++this is for cloud shell test
+  235  git clone ssh://kirankumarrv0990@gmail.com@source.developers.google.com:2022/p/devops-test-316311/r/test-coderepo
+  
+   249  cd test-coderepo/
+  250  git branch -a
+  251  clear
+  252  vi app.java
+  253  git add app.java
+  254  git commit -m "this is for cloud shell"
+  255  git push origin master
+  256  git config
