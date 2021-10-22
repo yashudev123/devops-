@@ -1,0 +1,86 @@
+
+  681  clear
+  682  mkdir 04082021
+  683  cd 04082021/
+  684  vi Dockerfile
+  685  sudo docker build -t apache1 .
+  686  sudo docker run --name apache1 -d -P apache1
+  687  sudo docker inspect apache1
+  688  sudo docker volume ls
+  689  clear
+  690  sudo docker exec -it apache1 /bin/bash
+  691  cd /var/lib/docker/volumes/15cd351090d5353fd0df5e13135eb1f79a22b89887e04c207b810dfeed7ac439/_data
+  692  ls
+  693  sudo docker stop apache1
+  694  sudo docker rm apache1
+  695  ls
+  696  cd /home/ubuntu/
+  697  ls
+  698  clear
+  699  ls
+  700  cd 04082021/
+  701  ls
+  702  clear
+  703  ls
+  704  sudo docker run --name apache2 -d -P apache1
+  705  sudo docker stop apache2
+  706  clear
+  707  sudo docker run --name apache2 -d -P apache1
+  708  clear
+  709  sudo docker volume ls
+  710  sudo docker rm 4cefb881ee1d55bded1cd09d89ea0007607848ebaff5eb67f09b02061529351e 15cd351090d5353fd0df5e13135eb1f79a22b89887e04c207b810dfeed7ac439 test
+  711  sudo docker volume rm 4cefb881ee1d55bded1cd09d89ea0007607848ebaff5eb67f09b02061529351e 15cd351090d5353fd0df5e13135eb1f79a22b89887e04c207b810dfeed7ac439 test
+  712  sudo docker ps -a
+  713  sudo docker rm -f 2c9b5e36dc00
+  714  sudo docker volume rm 4cefb881ee1d55bded1cd09d89ea0007607848ebaff5eb67f09b02061529351e 15cd351090d5353fd0df5e13135eb1f79a22b89887e04c207b810dfeed7ac439 test
+  715  clear
+  716  sudo docker volume ls
+  717  sudo docker volume --help
+  718  clear
+  719  sudo ls -ltr /root/
+  720  touch file.txt
+  721  ls
+  722  pwd
+  723  sudo docker container run -d --name apache1 --mount "type=bind,source=/home/ubuntu/04082021/file.txt,target=/var/www/html" -P httpd
+  724  sudo docker ps -a
+  725  sudo docker exec -it apache1 /bin/bash
+  726  vi file.txt
+  727  mv file.txt html
+  728  sudo docker container run -d --name apache2 --mount "type=bind,source=/home/ubuntu/04082021/html,target=/var/www/html" -P httpd
+  729  sudo docker exec -it apache2 /bin/bash
+  730  ls
+  731  cat html
+  732  clear
+  733  5.sudo docker container run -d --name apache3 -v "/home/ubuntu/04082021:/mydata" -P httpd
+  734  sudo docker container run -d --name apache3 -v "/home/ubuntu/04082021:/mydata" -P httpd
+  735  sudo docker exec -it apache3 /bin/bash
+  736  ls -ltr
+  737  clear
+  738  sudo docker volume ls
+  739  sudo docker volume create myvolume
+  740  sudo docker volume ls
+  741  sudo docker rm - f $(sudo docker ps -aq)
+  742  sudo docker rm -f $(sudo docker ps -aq)
+  743  suod docker ps -a
+  744  sudo docker ps -a
+  745  clear
+  746  sudo docker volume inspect myvolume
+  747  sudo docker container run -d --name apache1 -P --mount "source=myvolume,target=/var/www/html" httpd:latest
+  748  sudo docker inspect apache1
+  749  sudo docker exec -it apache1 /bin/bash
+  750  sudo docker inspect apache1
+  751  cd /var/lib/docker/volumes/myvolume/_data
+  752  ls
+  753  sudo docker stop apache1
+  754  sudo docker rm apache1
+  755  sudo docker ps -a
+  756  ls
+  757  sudo docker container run -d --name apache2 -P --mount "source=myvolume,target=/var/www/html" httpd:latest
+  758  sudo docker exec -it apache2 /bin/bash
+  759  ls
+  760  vi 1.html
+  761  sudo vi 1.html
+  762  sudo docker exec -it apache2 /bin/bash
+  763  sudo vi 1.html
+  764  sudo docker exec -it apache2 /bin/bash
+

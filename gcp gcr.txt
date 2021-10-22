@@ -1,0 +1,27 @@
+Page up
+root@docker:~# docker push kannekanti_yashudev/busybox:latest
+The push refers to repository [docker.io/kannekanti_yashudev/busybox]
+An image does not exist locally with the tag: kannekanti_yashudev/busybox
+root@docker:~# docker tag docker/busybox:latest
+"docker tag" requires exactly 2 arguments.
+See 'docker tag --help'.
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+root@docker:~# docker tag kannekanti_yashudev/busybox:latest
+"docker tag" requires exactly 2 arguments.
+See 'docker tag --help'.
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+root@docker:~# docker busybox:latest kannekanti_yashudev/busybox:latest
+docker: 'busybox:latest' is not a docker command.
+See 'docker --help'
+root@docker:~# docker tag  busybox:latest kannekanti_yashudev/busybox:latest
+root@docker:~# docker push kannekanti_yashudev/busybox:latest
+The push refers to repository [docker.io/kannekanti_yashudev/busybox]
+5b8c72934dfc: Preparing 
+denied: requested access to the resource is denied
+root@docker:~# docker login
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store

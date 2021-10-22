@@ -1,0 +1,29 @@
+Page up
+[root@testjenkins ~]# ^C
+[root@testjenkins ~]# ls -ln /etc/alternatives/javac
+lrwxrwxrwx. 1 0 0 70 Jul 28 19:18 /etc/alternatives/javac -> /usr/lib/jvm/java-1.
+8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64/bin/javac
+[root@testjenkins ~]# cd /usr/lib/jvm/java-1.
+-bash: cd: /usr/lib/jvm/java-1.: No such file or directory
+[root@testjenkins ~]# cd /usr/lib/jvm/java-1.8.0-openjdk
+[root@testjenkins java-1.8.0-openjdk]# pwd
+/usr/lib/jvm/java-1.8.0-openjdk
+[root@testjenkins java-1.8.0-openjdk]# ll
+total 180
+-rw-r--r--. 1 root root   1522 Apr 21 14:28 ASSEMBLY_EXCEPTION
+drwxr-xr-x. 2 root root   4096 Jul 28 19:18 bin
+drwxr-xr-x. 3 root root    132 Jul 28 19:18 include
+drwxr-xr-x. 4 root root     95 Jul 28 19:18 jre
+drwxr-xr-x. 3 root root    144 Jul 28 19:18 lib
+-rw-r--r--. 1 root root  19274 Apr 21 14:28 LICENSE
+drwxr-xr-x. 2 root root    204 Jul 28 19:18 tapset
+-rw-r--r--. 1 root root 155003 Apr 21 14:28 THIRD_PARTY_README
+[root@testjenkins java-1.8.0-openjdk]# exit
+logout
+[kannekanti_yashudev@testjenkins ~]$ cat /var/lib/jenkins/secrets/initialAdminPassword
+cat: /var/lib/jenkins/secrets/initialAdminPassword: Permission denied
+[kannekanti_yashudev@testjenkins ~]$ sudo su -
+Last login: Wed Jul 28 20:20:07 UTC 2021 on pts/0
+[root@testjenkins ~]# cat /var/lib/jenkins/secrets/initialAdminPassword
+562598f53fc0460bbc535eb355cbd0a8
+[root@testjenkins ~]# 
